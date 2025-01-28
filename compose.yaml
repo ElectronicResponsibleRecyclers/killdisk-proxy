@@ -1,0 +1,10 @@
+services:
+  redirect-proxy:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./logs:/var/log/nginx
+    restart: unless-stopped
+    environment:
+      - TARGET_DOMAIN=portal.er2.com
